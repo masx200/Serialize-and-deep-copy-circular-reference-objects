@@ -1,4 +1,7 @@
-export function circularStringify(value: any): string {
+export function circularStringify(
+    value: any,
+    space: string | number = 4
+): string {
     const map = new Map<any, number>();
 
     return JSON.stringify(
@@ -11,15 +14,12 @@ export function circularStringify(value: any): string {
             } else {
                 map.set(v, id);
 
-                return Object.assign(
-                    v,
-                    {
-                        ...v,
-                        "Symbol.identity": id,
-                    },
-                );
+                return Object.assign(v, {
+                    ...v,
+                    "Symbol.identity": id,
+                });
             }
         },
-        4,
+        space
     );
 }
