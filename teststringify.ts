@@ -15,7 +15,7 @@ function test(origin: any) {
 const d: any[] = createCircular();
 
 const origin = ArrayToCircularLinkedList(
-    Array.from({ length: 10 }, (_, i) => i + Math.random())
+    Array.from({ length: 10 }, (_, i) => i + Math.random()),
 );
 
 test(origin);
@@ -24,8 +24,8 @@ test(d);
 
 test(
     ArrayToCircularDoublyTreeList(
-        Array.from({ length: 10 }, (_, i) => i + Math.random())
-    )
+        Array.from({ length: 10 }, (_, i) => i + Math.random()),
+    ),
 );
 const case2: any[][] = [[1]];
 case2.push(case2);

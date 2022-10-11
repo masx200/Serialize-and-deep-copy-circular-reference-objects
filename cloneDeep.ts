@@ -8,9 +8,9 @@ export function cloneDeep(value: any, map = new Map<any, any>()): any {
             {
                 value: value.toString(),
                 "Symbol.toStringTag": "BigInt",
-            }
+            },
         );
-        // console.log({ value, result });
+
         map.set(value, result);
         return result;
     }
@@ -30,7 +30,7 @@ export function cloneDeep(value: any, map = new Map<any, any>()): any {
         });
         Array.prototype.push.call(
             result,
-            ...[...value.values()].map((v) => cloneDeep(v, map))
+            ...[...value.values()].map((v) => cloneDeep(v, map)),
         );
         return result;
     }
@@ -43,7 +43,7 @@ export function cloneDeep(value: any, map = new Map<any, any>()): any {
         });
         Array.prototype.push.call(
             result,
-            ...[...value.entries()].map((v) => cloneDeep(v, map))
+            ...[...value.entries()].map((v) => cloneDeep(v, map)),
         );
         return result;
     }
@@ -53,7 +53,7 @@ export function cloneDeep(value: any, map = new Map<any, any>()): any {
         });
         map.set(value, result);
         Object.keys(value).forEach(
-            (key) => (result[key] = cloneDeep(value[key], map))
+            (key) => (result[key] = cloneDeep(value[key], map)),
         );
         return result;
     } else {
@@ -63,19 +63,18 @@ export function cloneDeep(value: any, map = new Map<any, any>()): any {
 
         const result: any = Object.assign(
             Object.create(Reflect.getPrototypeOf(value)),
-
             {
                 ...value,
 
                 "Symbol.toStringTag": value["Symbol.toStringTag"] ?? tag,
-            }
+            },
         );
         if (typeof value?.length !== "undefined") {
             Object.assign(result, { length: value.length });
         }
         map.set(value, result);
         Object.keys(value).forEach(
-            (key) => (result[key] = cloneDeep(value[key], map))
+            (key) => (result[key] = cloneDeep(value[key], map)),
         );
         return result;
     }

@@ -13,14 +13,13 @@ export function circularStringify(value: any): string {
 
                 return Object.assign(
                     v,
-
                     {
                         ...v,
                         "Symbol.identity": id,
-                    }
+                    },
                 );
             }
         },
-        4
+        4,
     );
 }

@@ -1,7 +1,7 @@
 import { TreeNode } from "./TreeNode.ts";
 
 export function ArrayToCircularDoublyTreeList(
-    array: Array<number>
+    array: Array<number>,
 ): TreeNode | null {
     if (array.length === 0) {
         return null;

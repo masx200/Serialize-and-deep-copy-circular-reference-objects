@@ -9,7 +9,7 @@ export function createCircular() {
     const d: any[] = [
         10n ** 39n + 7n,
         ArrayToCircularLinkedList(
-            Array.from({ length: 10 }, (_, i) => i + Math.random())
+            Array.from({ length: 10 }, (_, i) => i + Math.random()),
         ),
         new Date(),
         a,
