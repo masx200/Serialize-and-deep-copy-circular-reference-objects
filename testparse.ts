@@ -101,3 +101,189 @@ const case2 = `{
 }`;
 console.log("stringified", case2);
 console.log("parsed", circularParse(case2));
+const case3 = ` {
+    "val": 0.2556659509869501,
+    "next": {
+        "val": 1.2277812641050994,
+        "next": {
+            "val": 2.3907396938797394,
+            "next": {
+                "val": 3.016428274329547,
+                "next": {
+                    "val": 4.369877129100735,
+                    "next": {
+                        "val": 5.259096514813646,
+                        "next": {
+                            "val": 6.036077271143199,
+                            "next": {
+                                "val": 7.02278355450377,
+                                "next": {
+                                    "val": 8.870950796699386,
+                                    "next": {
+                                        "val": 9.267242386606252,
+                                        "next": {
+                                            "Symbol.reference": 0
+                                        },
+                                        "Symbol.toStringTag": "ListNode",
+                                        "Symbol.identity": 9
+                                    },
+                                    "Symbol.toStringTag": "ListNode",
+                                    "Symbol.identity": 8
+                                },
+                                "Symbol.toStringTag": "ListNode",
+                                "Symbol.identity": 7
+                            },
+                            "Symbol.toStringTag": "ListNode",
+                            "Symbol.identity": 6
+                        },
+                        "Symbol.toStringTag": "ListNode",
+                        "Symbol.identity": 5
+                    },
+                    "Symbol.toStringTag": "ListNode",
+                    "Symbol.identity": 4
+                },
+                "Symbol.toStringTag": "ListNode",
+                "Symbol.identity": 3
+            },
+            "Symbol.toStringTag": "ListNode",
+            "Symbol.identity": 2
+        },
+        "Symbol.toStringTag": "ListNode",
+        "Symbol.identity": 1
+    },
+    "Symbol.toStringTag": "ListNode",
+    "Symbol.identity": 0
+}`;
+console.log("stringified", case3);
+console.log("parsed", circularParse(case3));
+const case4 = ` {
+    "0": {
+        "value": "1000000000000000000000000000000000000007",
+        "Symbol.toStringTag": "BigInt",
+        "Symbol.identity": 1
+    },
+    "1": {
+        "val": 0.711261724560148,
+        "next": {
+            "val": 1.5298738212461842,
+            "next": {
+                "val": 2.6921615006896777,
+                "next": {
+                    "val": 3.5464638161677624,
+                    "next": {
+                        "val": 4.662005612476349,
+                        "next": {
+                            "val": 5.939254620546895,
+                            "next": {
+                                "val": 6.717170588009366,
+                                "next": {
+                                    "val": 7.994213667433391,
+                                    "next": {
+                                        "val": 8.535354346066779,
+                                        "next": {
+                                            "val": 9.456799627967222,
+                                            "next": {
+                                                "Symbol.reference": 2
+                                            },
+                                            "Symbol.toStringTag": "ListNode",
+                                            "Symbol.identity": 11
+                                        },
+                                        "Symbol.toStringTag": "ListNode",
+                                        "Symbol.identity": 10
+                                    },
+                                    "Symbol.toStringTag": "ListNode",
+                                    "Symbol.identity": 9
+                                },
+                                "Symbol.toStringTag": "ListNode",
+                                "Symbol.identity": 8
+                            },
+                            "Symbol.toStringTag": "ListNode",
+                            "Symbol.identity": 7
+                        },
+                        "Symbol.toStringTag": "ListNode",
+                        "Symbol.identity": 6
+                    },
+                    "Symbol.toStringTag": "ListNode",
+                    "Symbol.identity": 5
+                },
+                "Symbol.toStringTag": "ListNode",
+                "Symbol.identity": 4
+            },
+            "Symbol.toStringTag": "ListNode",
+            "Symbol.identity": 3
+        },
+        "Symbol.toStringTag": "ListNode",
+        "Symbol.identity": 2
+    },
+    "2": "2022-10-11T15:28:02.390Z",
+    "3": {
+        "n": null,
+        "m": 1.7976931348623157e+308,
+        "s": {
+            "0": 9999,
+            "1": {
+                "Symbol.reference": 12
+            },
+            "2": {
+                "Symbol.reference": 13
+            },
+            "Symbol.toStringTag": "Set",
+            "length": 3,
+            "Symbol.identity": 13
+        },
+        "c": {
+            "0": "world",
+            "1": {
+                "b": {
+                    "0": "hello",
+                    "1": {
+                        "a": {
+                            "Symbol.reference": 12
+                        },
+                        "Symbol.toStringTag": "Object",
+                        "Symbol.identity": 17
+                    },
+                    "Symbol.toStringTag": "Array",
+                    "length": 2,
+                    "Symbol.identity": 16
+                },
+                "Symbol.toStringTag": "Object",
+                "Symbol.identity": 15
+            },
+            "Symbol.toStringTag": "Array",
+            "length": 2,
+            "Symbol.identity": 14
+        },
+        "Symbol.toStringTag": "Object",
+        "Symbol.identity": 12
+    },
+    "4": {
+        "0": {
+            "0": {
+                "Symbol.reference": 12
+            },
+            "1": "aaaa",
+            "Symbol.toStringTag": "Array",
+            "length": 2,
+            "Symbol.identity": 19
+        },
+        "1": {
+            "0": 8888,
+            "1": 7777,
+            "Symbol.toStringTag": "Array",
+            "length": 2,
+            "Symbol.identity": 20
+        },
+        "Symbol.toStringTag": "Map",
+        "length": 2,
+        "Symbol.identity": 18
+    },
+    "5": {
+        "Symbol.reference": 0
+    },
+    "Symbol.toStringTag": "Array",
+    "length": 6,
+    "Symbol.identity": 0
+}`;
+console.log("stringified", case4);
+console.log("parsed", circularParse(case4));

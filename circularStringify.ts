@@ -1,6 +1,6 @@
 export function circularStringify(
     value: any,
-    space: string | number = 4
+    space: string | number = 4,
 ): string {
     const map = new Map<any, number>();
 
@@ -20,6 +20,6 @@ export function circularStringify(
                 });
             }
         },
-        space
+        space,
     );
 }
