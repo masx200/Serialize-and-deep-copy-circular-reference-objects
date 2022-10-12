@@ -24,7 +24,12 @@ export const replacerCustomizers: Customizer[] = [
             return value instanceof Date;
         },
         clone(value) {
-            const result = new Date(value);
+            const tag = getTag(value);
+            const result: any = {};
+            Object.assign(result, {
+                value: value.toJSON(),
+                "Symbol.toStringTag": tag,
+            });
             return result;
         },
     },

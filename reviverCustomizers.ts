@@ -13,10 +13,10 @@ export const reviverCustomizers: Customizer[] = [
     },
     {
         check(value) {
-            return value instanceof Date;
+            return value?.["Symbol.toStringTag"] === "Date";
         },
         clone(value) {
-            const result = new Date(value);
+            const result = new Date(value?.value);
             return result;
         },
     },

@@ -162,25 +162,25 @@ const case4 = ` {
         "Symbol.identity": 1
     },
     "1": {
-        "val": 0.711261724560148,
+        "val": 0.26838766064860486,
         "next": {
-            "val": 1.5298738212461842,
+            "val": 1.054121524850339,
             "next": {
-                "val": 2.6921615006896777,
+                "val": 2.0682264976649893,
                 "next": {
-                    "val": 3.5464638161677624,
+                    "val": 3.556165882759723,
                     "next": {
-                        "val": 4.662005612476349,
+                        "val": 4.0426207287215945,
                         "next": {
-                            "val": 5.939254620546895,
+                            "val": 5.599727405726615,
                             "next": {
-                                "val": 6.717170588009366,
+                                "val": 6.745836755962819,
                                 "next": {
-                                    "val": 7.994213667433391,
+                                    "val": 7.34243565087919,
                                     "next": {
-                                        "val": 8.535354346066779,
+                                        "val": 8.26725097613973,
                                         "next": {
-                                            "val": 9.456799627967222,
+                                            "val": 9.535134149362133,
                                             "next": {
                                                 "Symbol.reference": 2
                                             },
@@ -214,21 +214,25 @@ const case4 = ` {
         "Symbol.toStringTag": "ListNode",
         "Symbol.identity": 2
     },
-    "2": "2022-10-11T15:28:02.390Z",
+    "2": {
+        "value": "2022-10-12T02:54:42.734Z",
+        "Symbol.toStringTag": "Date",
+        "Symbol.identity": 12
+    },
     "3": {
         "n": null,
         "m": 1.7976931348623157e+308,
         "s": {
             "0": 9999,
             "1": {
-                "Symbol.reference": 12
+                "Symbol.reference": 13
             },
             "2": {
-                "Symbol.reference": 13
+                "Symbol.reference": 14
             },
             "Symbol.toStringTag": "Set",
             "length": 3,
-            "Symbol.identity": 13
+            "Symbol.identity": 14
         },
         "c": {
             "0": "world",
@@ -237,45 +241,45 @@ const case4 = ` {
                     "0": "hello",
                     "1": {
                         "a": {
-                            "Symbol.reference": 12
+                            "Symbol.reference": 13
                         },
                         "Symbol.toStringTag": "Object",
-                        "Symbol.identity": 17
+                        "Symbol.identity": 18
                     },
                     "Symbol.toStringTag": "Array",
                     "length": 2,
-                    "Symbol.identity": 16
+                    "Symbol.identity": 17
                 },
                 "Symbol.toStringTag": "Object",
-                "Symbol.identity": 15
+                "Symbol.identity": 16
             },
             "Symbol.toStringTag": "Array",
             "length": 2,
-            "Symbol.identity": 14
+            "Symbol.identity": 15
         },
         "Symbol.toStringTag": "Object",
-        "Symbol.identity": 12
+        "Symbol.identity": 13
     },
     "4": {
         "0": {
             "0": {
-                "Symbol.reference": 12
+                "Symbol.reference": 13
             },
             "1": "aaaa",
             "Symbol.toStringTag": "Array",
             "length": 2,
-            "Symbol.identity": 19
+            "Symbol.identity": 20
         },
         "1": {
             "0": 8888,
             "1": 7777,
             "Symbol.toStringTag": "Array",
             "length": 2,
-            "Symbol.identity": 20
+            "Symbol.identity": 21
         },
         "Symbol.toStringTag": "Map",
         "length": 2,
-        "Symbol.identity": 18
+        "Symbol.identity": 19
     },
     "5": {
         "Symbol.reference": 0
