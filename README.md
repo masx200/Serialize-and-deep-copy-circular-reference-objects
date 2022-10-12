@@ -41,6 +41,11 @@ function testparse(case1: any) {
 ### 例子
 
 ```
+stringified {"a":{"Symbol.reference":0},"Symbol.identity":0}
+parsed <ref *1> { a: [Circular *1] }
+```
+
+```
 stringified {
     "0": {
         "0": 1,
