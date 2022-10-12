@@ -12,8 +12,10 @@ Serialize and deep copy circular reference objects
 
 #### 使用说明
 
+`cloneDeep`:可自定义的深拷贝循环引用对象的方法
+
 ```ts
-function test(origin: any) {
+function teststringify(origin: any) {
     const cloned = cloneDeep(origin, ...replacerCustomizers);
     console.log("origin", origin);
     console.log("cloned", cloned);
@@ -24,7 +26,7 @@ function test(origin: any) {
 ```
 
 ```ts
-function test(case1: any) {
+function testparse(case1: any) {
     console.log("stringified", case1);
     const parsed1 = circularParse(case1);
     console.log("parsed", parsed1);
