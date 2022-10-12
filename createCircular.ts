@@ -9,10 +9,8 @@ export function createCircular() {
 
     const d: any[] = [
         10n ** 39n + 7n,
-        ArrayToCircularLinkedList(
-            Array.from({ length: 10 }, (_, i) => i + Math.random()),
-        ),
-        new Date(),
+        ArrayToCircularLinkedList(Array.from({ length: 10 }, (_, i) => i + 50)),
+        new Date("2022-10-12T05:39:33.511Z"),
         a,
         //@ts-ignore
         new Map([

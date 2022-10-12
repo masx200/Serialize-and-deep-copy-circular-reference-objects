@@ -6,7 +6,7 @@ import { teststringify } from "./teststringify.ts";
 Deno.test("stringify", () => {
     const d: any[] = createCircular();
     const origin = ArrayToCircularLinkedList(
-        Array.from({ length: 10 }, (_, i) => i + Math.random()),
+        Array.from({ length: 10 }, (_, i) => i + 300),
     );
 
     teststringify(origin);
@@ -15,7 +15,7 @@ Deno.test("stringify", () => {
 
     teststringify(
         ArrayToCircularDoublyTreeList(
-            Array.from({ length: 10 }, (_, i) => i + Math.random()),
+            Array.from({ length: 10 }, (_, i) => i + 600),
         ),
     );
     const case2: any[][] = [[1]];
