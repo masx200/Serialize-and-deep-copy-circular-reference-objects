@@ -1,5 +1,5 @@
 export class ListNode {
-    [Symbol.toStringTag] = "ListNode";
+    // [Symbol.toStringTag] = "ListNode";
     val: number;
     next: ListNode | null;
     constructor(val?: number, next?: ListNode | null) {

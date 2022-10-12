@@ -1,5 +1,7 @@
 import { Customizer } from "./Customizer.ts";
 import { getTag } from "./getTag.ts";
+import { ListNode } from "./ListNode.ts";
+import { TreeNode } from "./TreeNode.ts";
 export const replacerCustomizers: Customizer[] = [
     {
         check(value) {
@@ -61,6 +63,61 @@ export const replacerCustomizers: Customizer[] = [
             Array.prototype.push.call(
                 result,
                 ...[...value.entries()].map((v) => dfs(v)),
+            );
+        },
+    },
+    {
+        check(value) {
+            return value instanceof ListNode;
+        },
+        clone(value) {
+            const result: any = new ListNode();
+            Object.assign(result, value, {
+                "Symbol.toStringTag": "ListNode",
+            });
+            return result;
+        },
+        children(value, result, dfs) {
+            Object.keys(value).forEach(
+                (key) => (result[key] = dfs(value[key])),
+            );
+        },
+    },
+    {
+        check(value) {
+            return value instanceof TreeNode;
+        },
+        clone(value) {
+            const result: any = new TreeNode();
+            Object.assign(result, value, {
+                "Symbol.toStringTag": "TreeNode",
+            });
+            return result;
+        },
+        children(value, result, dfs) {
+            Object.keys(value).forEach(
+                (key) => (result[key] = dfs(value[key])),
+            );
+        },
+    },
+    {
+        check(value) {
+            return !(typeof value !== "object" || value === null);
+        },
+        clone(value) {
+            const tag = getTag(value);
+            const result: any = Object.create(Reflect.getPrototypeOf(value));
+            Object.assign(result, value, {
+                "Symbol.toStringTag": tag,
+            });
+            if (typeof value?.length !== "undefined") {
+                Object.assign(result, { length: value.length });
+            }
+            return result;
+        },
+        children(value, result, dfs) {
+            Object.keys(value).forEach(
+                (key) => (result[key] = dfs(value[key])),
             );
         },
     },
