@@ -10,6 +10,8 @@ Serialize and deep copy circular reference objects
 
 使用哈希表和深度优先搜索对循环引用对象进行深拷贝和序列化
 
+序列化和反序列化时,对每个对象进行编号`"Symbol.identity"`,如果遇到重复的对象,使用编号引用`"Symbol.reference"`进行表示
+
 #### 使用说明
 
 函数`cloneDeep`:可自定义的深拷贝循环引用对象的方法,可以把JSON不支持的类型转换成JSON支持的类型,也可反向转换
