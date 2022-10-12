@@ -1,4 +1,6 @@
 import { circularParse } from "./circularParse.ts";
+import { cloneDeep } from "./cloneDeep.ts";
+import { reviverCustomizers } from "./reviverCustomizers.ts";
 
 const case1 = ` {
     "val": 0.5975351479243165,
@@ -83,8 +85,7 @@ const case1 = ` {
     "Symbol.toStringTag": "TreeNode",
     "Symbol.identity": 0
 }`;
-console.log("stringified", case1);
-console.log("parsed", circularParse(case1));
+test(case1);
 const case2 = `{
     "0": {
         "0": 1,
@@ -99,8 +100,7 @@ const case2 = `{
     "length": 2,
     "Symbol.identity": 0
 }`;
-console.log("stringified", case2);
-console.log("parsed", circularParse(case2));
+test(case2);
 const case3 = ` {
     "val": 0.2556659509869501,
     "next": {
@@ -154,8 +154,7 @@ const case3 = ` {
     "Symbol.toStringTag": "ListNode",
     "Symbol.identity": 0
 }`;
-console.log("stringified", case3);
-console.log("parsed", circularParse(case3));
+test(case3);
 const case4 = ` {
     "0": {
         "value": "1000000000000000000000000000000000000007",
@@ -285,5 +284,11 @@ const case4 = ` {
     "length": 6,
     "Symbol.identity": 0
 }`;
-console.log("stringified", case4);
-console.log("parsed", circularParse(case4));
+test(case4);
+
+function test(case1: any) {
+    console.log("stringified", case1);
+    const parsed1 = circularParse(case1);
+    console.log("parsed", parsed1);
+    console.log("cloned", cloneDeep(parsed1, ...reviverCustomizers));
+}
