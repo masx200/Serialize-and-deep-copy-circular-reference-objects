@@ -17,6 +17,7 @@ Deno.test("basic object", () => {
     console.log(obj);
     console.log(clone);
     assert(clone !== obj);
+    assertEquals(clone, obj);
     assert(clone.a === clone); // -> true
     assertEquals(
         stringified,
@@ -32,6 +33,7 @@ Deno.test("basic array", () => {
     const clone = testparse(stringified);
     assert(clone !== obj);
     assertEquals(clone, obj);
+    assertEquals(clone, clone[1]);
     assertEquals(
         stringified,
         `{
