@@ -14,6 +14,8 @@ Serialize and deep copy circular reference objects
 
 #### 使用说明
 
+https://deno.land/x/masx200_serialize_circular_reference
+
 函数`cloneDeep`:可自定义的深拷贝循环引用对象的方法,可以把JSON不支持的类型转换成JSON支持的类型,也可反向转换
 
 函数`circularParse`:从JSON解析一个循环引用对象
