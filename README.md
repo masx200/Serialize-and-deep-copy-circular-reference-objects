@@ -8,7 +8,7 @@ Serialize and deep copy circular reference objects
 
 #### 软件架构
 
-软件架构说明
+使用哈希表和深度优先搜索对循环引用对象进行深拷贝和序列化
 
 #### 使用说明
 

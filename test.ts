@@ -18,6 +18,6 @@ Deno.test("basic", () => {
     assert(clone.a === clone); // -> true
     assertEquals(
         stringified,
-        `{"a":{"Symbol.reference":0},"Symbol.identity":0}`
+        `{"a":{"Symbol.reference":0},"Symbol.identity":0}`,
     );
 });
