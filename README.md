@@ -12,7 +12,11 @@ Serialize and deep copy circular reference objects
 
 #### 使用说明
 
-`cloneDeep`:可自定义的深拷贝循环引用对象的方法
+函数`cloneDeep`:可自定义的深拷贝循环引用对象的方法
+
+函数`circularParse`:从JSON解析一个循环引用对象
+
+函数`circularStringify`:把循环引用对象序列化成JSON
 
 ```ts
 function teststringify(origin: any) {
