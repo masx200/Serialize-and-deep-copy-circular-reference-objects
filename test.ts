@@ -4,7 +4,9 @@ import {
     assert,
     assertEquals,
 } from "https://deno.land/std@0.159.0/testing/asserts.ts";
-Deno.test("basic", () => {
+import { teststringify } from "./teststringify.ts";
+import { testparse } from "./testparse.ts";
+Deno.test("basic object", () => {
     const obj = {};
     //@ts-ignore
     obj.a = obj;
@@ -19,5 +21,32 @@ Deno.test("basic", () => {
     assertEquals(
         stringified,
         `{"a":{"Symbol.reference":0},"Symbol.identity":0}`,
+    );
+});
+Deno.test("basic array", () => {
+    const obj: any[][] = [[1]];
+    obj.push(obj);
+    const stringified = teststringify(obj);
+    console.log(stringified);
+    console.log(obj);
+    const clone = testparse(stringified);
+    assert(clone !== obj);
+    assertEquals(clone, obj);
+    assertEquals(
+        stringified,
+        `{
+    "0": {
+        "0": 1,
+        "Symbol.toStringTag": "Array",
+        "length": 1,
+        "Symbol.identity": 1
+    },
+    "1": {
+        "Symbol.reference": 0
+    },
+    "Symbol.toStringTag": "Array",
+    "length": 2,
+    "Symbol.identity": 0
+}`,
     );
 });

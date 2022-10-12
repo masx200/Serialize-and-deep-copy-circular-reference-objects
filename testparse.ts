@@ -289,10 +289,11 @@ const case4 = ` {
     "Symbol.identity": 0
 }`;
 testparse(case4);
-
-function testparse(case1: any) {
+export function testparse(case1: any) {
     console.log("stringified", case1);
     const parsed1 = circularParse(case1);
     console.log("parsed", parsed1);
-    console.log("cloned", cloneDeep(parsed1, ...reviverCustomizers));
+    const cloned = cloneDeep(parsed1, ...reviverCustomizers);
+    console.log("cloned", cloned);
+    return cloned;
 }

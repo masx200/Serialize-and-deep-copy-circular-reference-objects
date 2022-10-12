@@ -3,11 +3,14 @@ export function circularStringify(
     space: string | number = 4,
 ): string {
     const map = new Map<any, number>();
-
-    return JSON.stringify(
+    const calls: (() => void)[] = [];
+    const result = JSON.stringify(
         value,
         (_k, v) => {
             if (typeof v !== "object" || v === null) return v;
+            calls.push(() => {
+                Reflect.deleteProperty(v, "Symbol.identity");
+            });
             const id = map.get(v) ?? map.size;
             if (map.has(v)) {
                 return { "Symbol.reference": id };
@@ -22,4 +25,6 @@ export function circularStringify(
         },
         space,
     );
+    calls.forEach((call) => call());
+    return result;
 }

@@ -4,13 +4,14 @@ import { cloneDeep } from "./cloneDeep.ts";
 import { createCircular } from "./createCircular.ts";
 import { ArrayToCircularDoublyTreeList } from "./ArrayToCircularDoublyTreeList.ts";
 import { replacerCustomizers } from "./replacerCustomizers.ts";
-function teststringify(origin: any) {
+export function teststringify(origin: any) {
     const cloned = cloneDeep(origin, ...replacerCustomizers);
     console.log("origin", origin);
     console.log("cloned", cloned);
     const stringified = circularStringify(cloned);
 
     console.log("stringified", stringified);
+    return stringified;
 }
 const d: any[] = createCircular();
 
