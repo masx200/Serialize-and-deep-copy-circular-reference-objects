@@ -6,7 +6,7 @@ export function circularStringify(
 
     return JSON.stringify(
         value,
-        (k, v) => {
+        (_k, v) => {
             if (typeof v !== "object" || v === null) return v;
             const id = map.get(v) ?? map.size;
             if (map.has(v)) {

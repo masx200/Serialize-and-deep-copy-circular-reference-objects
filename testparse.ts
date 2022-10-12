@@ -26,61 +26,61 @@ const case1 = ` {
                                         "right": {
                                             "Symbol.reference": 8
                                         },
-                                        "Symbol.toStringTag": "Object",
+                                        "Symbol.toStringTag": "TreeNode",
                                         "Symbol.identity": 9
                                     },
                                     "right": {
                                         "Symbol.reference": 7
                                     },
-                                    "Symbol.toStringTag": "Object",
+                                    "Symbol.toStringTag": "TreeNode",
                                     "Symbol.identity": 8
                                 },
                                 "right": {
                                     "Symbol.reference": 6
                                 },
-                                "Symbol.toStringTag": "Object",
+                                "Symbol.toStringTag": "TreeNode",
                                 "Symbol.identity": 7
                             },
                             "right": {
                                 "Symbol.reference": 5
                             },
-                            "Symbol.toStringTag": "Object",
+                            "Symbol.toStringTag": "TreeNode",
                             "Symbol.identity": 6
                         },
                         "right": {
                             "Symbol.reference": 4
                         },
-                        "Symbol.toStringTag": "Object",
+                        "Symbol.toStringTag": "TreeNode",
                         "Symbol.identity": 5
                     },
                     "right": {
                         "Symbol.reference": 3
                     },
-                    "Symbol.toStringTag": "Object",
+                    "Symbol.toStringTag": "TreeNode",
                     "Symbol.identity": 4
                 },
                 "right": {
                     "Symbol.reference": 2
                 },
-                "Symbol.toStringTag": "Object",
+                "Symbol.toStringTag": "TreeNode",
                 "Symbol.identity": 3
             },
             "right": {
                 "Symbol.reference": 1
             },
-            "Symbol.toStringTag": "Object",
+            "Symbol.toStringTag": "TreeNode",
             "Symbol.identity": 2
         },
         "right": {
             "Symbol.reference": 0
         },
-        "Symbol.toStringTag": "Object",
+        "Symbol.toStringTag": "TreeNode",
         "Symbol.identity": 1
     },
     "right": {
         "Symbol.reference": 9
     },
-    "Symbol.toStringTag": "Object",
+    "Symbol.toStringTag": "TreeNode",
     "Symbol.identity": 0
 }`;
 console.log("stringified", case1);

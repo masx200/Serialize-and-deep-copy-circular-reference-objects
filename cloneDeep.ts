@@ -57,12 +57,14 @@ export function cloneDeep(value: any, ...customizers: Array<Customizer>): any {
             return result;
         }
         if (value instanceof ListNode) {
-            const result: any = Object.assign(new ListNode(), {
+            const result: any = Object.assign(new ListNode(), value, {
                 "Symbol.toStringTag": "ListNode",
             });
             map.set(value, result);
             Object.keys(value).forEach(
-                (key) => (result[key] = dfs(value[key], map)),
+                (
+                    key,
+                ) => (result[key] = dfs(Reflect.get(value, key, value), map)),
             );
             return result;
         } else {

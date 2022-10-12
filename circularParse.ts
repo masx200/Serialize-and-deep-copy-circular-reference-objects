@@ -1,7 +1,7 @@
 export function circularParse(value: string): any {
     const map = new Map<number, any>();
     const calls: (() => void)[] = [];
-    const result = JSON.parse(value, (k, v) => {
+    const result = JSON.parse(value, (_k, v) => {
         if (typeof v !== "object" || v === null) return v;
 
         const id = v?.["Symbol.identity"];
