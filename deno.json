@@ -1,4 +1,4 @@
 {
     "fmt": { "options": { "indentWidth": 4 } },
-    "lint": { "rules": { "exclude": ["no-explicit-any"] } }
+    "lint": { "rules": { "exclude": ["no-explicit-any", "ban-ts-comment"] } }
 }
