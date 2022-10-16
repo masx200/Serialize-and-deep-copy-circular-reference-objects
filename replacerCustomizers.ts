@@ -4,7 +4,7 @@ import { ListNode } from "./ListNode.ts";
 import { TreeNode } from "./TreeNode.ts";
 export const replacerCustomizers: Customizer[] = [
     {
-        check(value) {
+        match(value) {
             return typeof value === "bigint";
         },
         clone(value) {
@@ -20,7 +20,7 @@ export const replacerCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return value instanceof Date;
         },
         clone(value) {
@@ -34,7 +34,7 @@ export const replacerCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return value instanceof Set;
         },
         clone(value) {
@@ -53,7 +53,7 @@ export const replacerCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return value instanceof Map;
         },
         clone(value) {
@@ -72,7 +72,7 @@ export const replacerCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return value instanceof ListNode;
         },
         clone(value) {
@@ -89,7 +89,7 @@ export const replacerCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return value instanceof TreeNode;
         },
         clone(value) {
@@ -106,7 +106,7 @@ export const replacerCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return !(typeof value !== "object" || value === null);
         },
         clone(value) {

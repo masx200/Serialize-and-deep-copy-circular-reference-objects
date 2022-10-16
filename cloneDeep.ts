@@ -4,7 +4,7 @@ export function cloneDeep(value: any, ...customizers: Array<Customizer>): any {
     function dfs(value: any, map: Map<any, any>): any {
         if (map.has(value)) return map.get(value);
         for (const customizer of customizers) {
-            if (customizer.check(value)) {
+            if (customizer.match(value)) {
                 const result = customizer.clone(value);
                 map.set(value, result);
                 customizer.children?.(value, result, (v) => dfs(v, map));
