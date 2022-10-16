@@ -4,7 +4,7 @@ import { ListNode } from "./ListNode.ts";
 import { TreeNode } from "./TreeNode.ts";
 export const reviverCustomizers: Customizer[] = [
     {
-        check(value) {
+        match(value) {
             return value?.["Symbol.toStringTag"] === "BigInt";
         },
         clone(value) {
@@ -12,7 +12,7 @@ export const reviverCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return value?.["Symbol.toStringTag"] === "Date";
         },
         clone(value) {
@@ -21,7 +21,7 @@ export const reviverCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return value?.["Symbol.toStringTag"] === "Set";
         },
         clone() {
@@ -34,7 +34,7 @@ export const reviverCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return value?.["Symbol.toStringTag"] === "Map";
         },
         clone() {
@@ -49,7 +49,7 @@ export const reviverCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return value?.["Symbol.toStringTag"] === "ListNode";
         },
         clone() {
@@ -64,7 +64,7 @@ export const reviverCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return value?.["Symbol.toStringTag"] === "TreeNode";
         },
         clone() {
@@ -79,7 +79,7 @@ export const reviverCustomizers: Customizer[] = [
         },
     },
     {
-        check(value) {
+        match(value) {
             return !(typeof value !== "object" || value === null);
         },
         clone(value) {
